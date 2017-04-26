@@ -7,7 +7,7 @@ function pullfile(filename){
   .then(contents => {
     var contentarr = contents.split('\nTRUMP: ');
     var modifiedcontentarr = contentarr.map(string => string.slice(0, string.indexOf(':') + 1));
-    var outputcontent = modifiedcontentarr.slice(1).join('').replace(/CLINTON:/g, '').replace(/HOLT:/g, '')
+    var outputcontent = modifiedcontentarr.slice(1).join(' ').replace(/CLINTON:/g, '').replace(/HOLT:/g, '')
     .replace(/WALLACE:/g, '').replace(/COOPER:/g, '').replace(/RADDATZ:/g, '').replace(/BROCK:/g, '')
     .replace(/ *\([^)]*\) */g, '').replace(/\n/g, '');
     console.log(outputcontent);
